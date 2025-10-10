@@ -1,21 +1,6 @@
 # Truck Disposal Detection – Bosch Camera Configuration
 
 This repository contains **Bosch IVA (Intelligent Video Analytics)** configuration scripts used to detect trucks that **leave the unloading area (tolva) without disposing of their soybeans**.
-
----
-
-## 📦 Repository Structure
-
-truck-detection-config/
-├─ camera_rules/
-│ ├─ entrada_tolva_salida.txt # Detection logic for truck entry, unloading, and exit
-│ └─ alarm_email_task.txt # Email alert task configuration
-└─ docs/
-└─ camera_setup_notes.md # Instructions for importing the rules into the camera
-
-markdown
-Copy code
-
 ---
 
 ## ⚙️ Overview
@@ -46,8 +31,6 @@ Login("camera@example.com")
 Password("APP_PASSWORD")
 To("alerts@example.com")
 
-markdown
-Copy code
 4. Make sure that the sender email account supports **SMTP** (not POP3 or IMAP).
 - **SMTP (Simple Mail Transfer Protocol)** is required to **send** emails.
 - If your provider uses **two-factor authentication**, create an **app-specific password**.
