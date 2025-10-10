@@ -2,8 +2,6 @@
 
 This repository contains **Bosch IVA (Intelligent Video Analytics)** configuration scripts used to detect trucks that **leave the unloading area (tolva) without disposing of their soybeans**.
 
-All files are sanitized and **safe for public upload** — they contain no private credentials or IP addresses.
-
 ---
 
 ## 📦 Repository Structure
