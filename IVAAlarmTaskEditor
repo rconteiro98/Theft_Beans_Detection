@@ -1,1 +1,4 @@
-I
+//{{email_start
+AlarmMail mail:={IP("smtp.gmail.com")To("recepientemail")Layout(Standard)Camera(1)From("senderemail")Login("senderemail")Password("senderemailpassword")VCAOverlay(true)Port(587)Format(1944,2592)};
+if(VCARule(1,6)) then mail;
+//}}email_end 677f6d70ea4eb7a0167184b576b7bf0f
