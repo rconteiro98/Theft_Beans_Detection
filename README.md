@@ -17,13 +17,13 @@ These scripts define the logic inside a Bosch IVA camera to automatically trigge
 
 ## ✉️ Email Notification Setup
 
-The file `camera_rules/alarm_email_task.txt` defines how the camera sends email alerts.
+The file `IVAAlarmTaskEditor` defines how the camera sends email alerts.
 
 To enable email notifications:
 
 1. Open your **Bosch Configuration Manager** or **VCA Task Editor**.  
 2. In the **Alarm Task Editor** section, copy and paste the content of  
-   `camera_rules/alarm_email_task.txt`.
+   `IVAAlarmTaskEditor`.
 3. Replace the placeholder values:
 IP("smtp.example.com")
 From("camera@example.com")
@@ -65,8 +65,8 @@ To("alerts@example.com")
 
 1. Open Bosch **IVA Task Editor**.
 2. Import or copy/paste:
-- `entrada_tolva_salida.txt` → under the **IVA Tasks** section.
-- `alarm_email_task.txt` → under **Alarm Task Editor**.
+- `BoschIvaTaskEditor` → under the **IVA Tasks** section.
+- `IVAAlarmTaskEditor` → under **Alarm Task Editor**.
 3. Adjust geometric coordinates (`Field`, `Line`) according to your camera’s position.
 4. Apply and save configuration to the camera.
 
