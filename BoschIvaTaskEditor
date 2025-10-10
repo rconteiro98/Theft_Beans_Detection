@@ -1,0 +1,59 @@
+Resolution := { Min(-1, -1) Max(1, 1) };
+Line #1 := { Point(-0.308, -0.599) Point(0.164, -0.600) DebounceTime(0.10) Direction(1) TriggerPoint(FootPoint) };
+Field #1 := { Point(-0.403, -0.941) Point(0.262, -0.950) Point(0.256, -0.522) Point(-0.439, -0.520) DebounceTime(0.50) ObjectSet(FootPoint) };
+
+Field #2 := { Point(-0.575, 0.037) Point(0.419, 0.037) Point(0.589, 1.000) Point(-0.695, 0.991) DebounceTime(0.50) ObjectSet(BoundingBox) };
+
+
+//@Task T:2 V:0 I:1 "Entrada" {
+//[1.a=(s1:1);1.b=1;1.f=31;1.h=32;7.a=C:10|;12.a=c:1;5.a=c:1;11.a=(o:0.5,d:0.5,a:10.0);3.o=(h2:0.00781,h3:0.98242,w2:0.01042,w3:0.97917,b1:1,b2:0.00008,b3:0.05885);]
+ObjectState #31 := RelativeObjectSize within(0.00008,0.05885)  and HasClass( Vehicle ) with DebounceTime(0.5);
+Event #32:={CrossedLine#1 where ObjectState #31};
+external Event #1 := {Event #32 !before(0,0.5) Event #32 where first.oid == second.oid};
+external SimpleState #1 := Event #1 within(0,10.0);
+//@}
+//@Task T:1 V:0 I:2 "Tolva" {
+//[1.a=(s1:1);1.b=2;1.f=30;7.a=(s:1|);12.a=c:1;2.a=;11.a=(a:5.0);]
+ObjectState #30 := HasSubclass(CT,1);
+ObjectState #2 := InsideField #1 and ObjectState #30;
+external Event #2 := OnSet ObjectState #2;
+external SimpleState #2 := ObjectsInState #2 within(1,*) with AggregationTime(5.0);
+
+//@}
+//@Task T:1 V:0 I:3 "Salida" {
+//[1.a=(s1:2);1.b=3;1.f=32;7.a=C:10|;12.a=c:1;4.a=c:1;2.a=(b1:1,b2:0.08002,b3:0.56982);11.a=a:5.0;]
+ObjectState #32 := RelativeObjectSize within(0.08002,0.56982)  and HasClass( Vehicle );
+ObjectState #3 := InsideField #2 and ObjectState #32;
+external Event #3 := OnSet ObjectState #3;
+external SimpleState #3 := ObjectsInState #3 within(1,*) with AggregationTime(5.0);
+
+//@}
+//@Task T:4 V:0 I:4 "Re arme Panel" {
+//[Condición: Salida después de Tolva, mismo objeto, intervalo de 10 segundos]
+
+// Definir el evento que combina "Tolva" y "Salida"
+external Event #4 := {
+    OnClear SimpleState#6
+};
+
+//@}
+
+//@Task T:4 V:0 I:5 "Bajada Tolva" {
+//[Condición: Salida después de Tolva, mismo objeto, intervalo de 10 segundos]
+
+// Definir el evento que combina "Tolva" y "Salida"
+external Event #5 := {
+    OnClear SimpleState#2
+};
+
+//@} 
+
+//@Task T:4 V:0 I:6 "Salida después de descarga" {
+external Event #6 := {
+    Event #5 not before(0, 600.0) Event #3
+};
+
+// Esto se puede usar como activador de evento válido
+external SimpleState #6 := Event #6 within(0,5.0);
+
+//@}
