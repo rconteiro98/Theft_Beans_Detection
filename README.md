@@ -1,4 +1,4 @@
-# Truck Ramp Lift Monitoring System
+# Truck Ramp Monitoring System
 
 This repository documents a port operations monitoring project designed to detect trucks in the Tolva ramp area and raise an alarm when a truck enters a lane but the expected ramp lift/unloading confirmation does not happen within the defined time window.
 
