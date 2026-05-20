@@ -1,6 +1,6 @@
 # Truck Ramp Lift Detection - Bosch IVA Configuration
 
-This repository contains Bosch IVA (Intelligent Video Analytics) configuration scripts for a Puerto Union port monitoring project. The system detects trucks in the Tolva ramp area and raises an alarm when a truck enters a lane but the expected ramp lift/unloading confirmation does not happen within the defined time window.
+This repository contains Bosch IVA (Intelligent Video Analytics) configuration scripts for a port operations monitoring project. The system detects trucks in the Tolva ramp area and raises an alarm when a truck enters a lane but the expected ramp lift/unloading confirmation does not happen within the defined time window.
 
 The project was designed to improve operational safety and response time by automating a check that previously depended on manual observation: confirming that trucks using the Tolva lanes complete the required lift/unloading step before the incident window expires.
 
@@ -8,7 +8,7 @@ The project was designed to improve operational safety and response time by auto
 
 ## Project Context
 
-The solution was implemented for the Tolva ramp zone at Puerto Union. Each lane is monitored by a camera positioned to detect truck line crossing and the later visual confirmation of the ramp or hydraulic-arm state.
+The solution was implemented for a Tolva ramp zone in an industrial port environment. Each lane is monitored by a camera positioned to detect truck line crossing and the later visual confirmation of the ramp or hydraulic-arm state.
 
 The original deployment focused on three operational goals:
 
@@ -78,7 +78,7 @@ These scripts define the logic inside a Bosch IVA camera to automatically trigge
 
 ## Results From Deployment
 
-The Puerto Union implementation produced three main operational improvements:
+The deployment produced three main operational improvements:
 
 - Faster response to incidents where a truck/ramp condition is not completed on time.
 - Automated real-time monitoring of the Tolva lanes.
