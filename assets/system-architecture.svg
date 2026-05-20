@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Truck ramp lift monitoring system architecture</title>
+  <desc id="desc">Generic architecture showing Tolva lanes monitored by Bosch IVA cameras connected to timing logic, an alarm panel, and staff notifications.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#263238"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="960" height="520" fill="#f7f9fb"/>
+  <text x="480" y="46" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#172026">System Architecture</text>
+  <text x="480" y="76" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#53636d">NDA-safe overview of the monitoring flow from lane detection to operational alert</text>
+
+  <g filter="url(#shadow)">
+    <rect x="44" y="124" width="230" height="280" rx="12" fill="#ffffff" stroke="#ccd6dd"/>
+    <text x="159" y="156" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#172026">Tolva Ramp Area</text>
+    <rect x="78" y="188" width="162" height="44" rx="6" fill="#e8f4f8" stroke="#86b7c9"/>
+    <text x="159" y="216" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#17343f">Lane A / Area 1</text>
+    <rect x="78" y="252" width="162" height="44" rx="6" fill="#e8f4f8" stroke="#86b7c9"/>
+    <text x="159" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#17343f">Lane B / Area 2</text>
+    <rect x="78" y="316" width="162" height="44" rx="6" fill="#e8f4f8" stroke="#86b7c9"/>
+    <text x="159" y="344" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#17343f">Lane C / Area 3</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="354" y="122" width="250" height="116" rx="12" fill="#ffffff" stroke="#ccd6dd"/>
+    <text x="479" y="156" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#172026">Bosch IVA Cameras</text>
+    <text x="479" y="188" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#53636d">Virtual line crossing</text>
+    <text x="479" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#53636d">Ramp / hydraulic-arm detection</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="354" y="292" width="250" height="116" rx="12" fill="#ffffff" stroke="#ccd6dd"/>
+    <text x="479" y="326" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#172026">Timing Logic</text>
+    <text x="479" y="358" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#53636d">5-minute lane timer</text>
+    <text x="479" y="382" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#53636d">Reset on lift confirmation</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="684" y="122" width="230" height="116" rx="12" fill="#ffffff" stroke="#ccd6dd"/>
+    <text x="799" y="156" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#172026">Alarm Panel</text>
+    <text x="799" y="188" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#53636d">Bosch B4512G</text>
+    <text x="799" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#53636d">Lane-specific alarm output</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="684" y="292" width="230" height="116" rx="12" fill="#ffffff" stroke="#ccd6dd"/>
+    <text x="799" y="326" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#172026">Staff Notification</text>
+    <text x="799" y="358" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#53636d">Audible or email alert</text>
+    <text x="799" y="382" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#53636d">Response by operations team</text>
+  </g>
+
+  <line x1="274" y1="210" x2="344" y2="180" stroke="#263238" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <line x1="274" y1="274" x2="344" y2="180" stroke="#263238" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <line x1="274" y1="338" x2="344" y2="180" stroke="#263238" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <line x1="479" y1="238" x2="479" y2="282" stroke="#263238" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <line x1="604" y1="350" x2="674" y2="350" stroke="#263238" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <line x1="604" y1="180" x2="674" y2="180" stroke="#263238" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <line x1="799" y1="238" x2="799" y2="282" stroke="#263238" stroke-width="2.4" marker-end="url(#arrow)"/>
+</svg>

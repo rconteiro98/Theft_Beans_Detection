@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="380" viewBox="0 0 960 380" role="img" aria-labelledby="title desc">
+  <title id="title">Truck ramp lift monitoring operational flow</title>
+  <desc id="desc">Generic process flow from truck lane entry through timer activation, lift verification, timer reset, or alarm generation.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#263238"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="960" height="380" fill="#f7f9fb"/>
+  <text x="480" y="44" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#172026">Operational Flow</text>
+  <text x="480" y="74" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#53636d">Truck entry starts a timed validation; confirmed ramp lift clears the event, otherwise an alarm is raised</text>
+
+  <g filter="url(#shadow)">
+    <rect x="40" y="126" width="150" height="86" rx="12" fill="#ffffff" stroke="#ccd6dd"/>
+    <text x="115" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026">Truck Enters</text>
+    <text x="115" y="186" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#53636d">Crosses lane line</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="235" y="126" width="150" height="86" rx="12" fill="#ffffff" stroke="#ccd6dd"/>
+    <text x="310" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026">IVA Detects</text>
+    <text x="310" y="186" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#53636d">Area and lane event</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="430" y="126" width="150" height="86" rx="12" fill="#ffffff" stroke="#ccd6dd"/>
+    <text x="505" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026">Timer Starts</text>
+    <text x="505" y="186" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#53636d">5-minute window</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M 700 104 L 825 169 L 700 234 L 575 169 Z" fill="#ffffff" stroke="#ccd6dd"/>
+    <text x="700" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#172026">Ramp Lift</text>
+    <text x="700" y="184" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#53636d">confirmed?</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="600" y="276" width="150" height="74" rx="12" fill="#e9f7ef" stroke="#91c9a3"/>
+    <text x="675" y="306" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#173f2a">Yes</text>
+    <text x="675" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#315d42">Reset timer</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="790" y="276" width="132" height="74" rx="12" fill="#fff0e6" stroke="#d59a6b"/>
+    <text x="856" y="306" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#5b2a12">No</text>
+    <text x="856" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#6a452e">Raise alarm</text>
+  </g>
+
+  <line x1="190" y1="169" x2="225" y2="169" stroke="#263238" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <line x1="385" y1="169" x2="420" y2="169" stroke="#263238" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <line x1="580" y1="169" x2="566" y2="169" stroke="#263238" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <path d="M 675 232 C 650 250 650 260 675 270" fill="none" stroke="#263238" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <path d="M 765 218 C 835 230 856 250 856 266" fill="none" stroke="#263238" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="635" y="258" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#315d42">within window</text>
+  <text x="812" y="247" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#6a452e">timeout</text>
+</svg>

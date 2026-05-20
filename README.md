@@ -4,6 +4,10 @@ This repository documents a port operations monitoring project designed to detec
 
 The project combines Bosch IVA (Intelligent Video Analytics) camera rules, lane-specific detection areas, timing logic, and alarm-panel integration to automate a check that previously depended on manual observation. Its purpose is to improve operational safety and response time by confirming that trucks using the Tolva lanes complete the required lift/unloading step before the incident window expires.
 
+![System architecture](assets/system-architecture.svg)
+
+![Operational flow](assets/operational-flow.svg)
+
 ---
 
 ## Project Context
