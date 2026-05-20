@@ -10,6 +10,18 @@ The project combines Bosch IVA (Intelligent Video Analytics) camera rules, lane-
 
 ---
 
+## Simulation Views
+
+The following images show the simulated lane environment used to validate the detection logic before deployment. They illustrate the three monitored lanes, the virtual entry line, and the visual markers used to represent detection zones and alarm conditions.
+
+![Three-lane simulation view](assets/simulation-three-lanes.png)
+
+![Virtual entry line simulation](assets/simulation-entry-line.png)
+
+![Detection zone simulation](assets/simulation-detection-zones.png)
+
+---
+
 ## Project Context
 
 The solution was implemented for a Tolva ramp zone in an industrial port environment. Each lane is monitored by a camera positioned to detect truck line crossing and the later visual confirmation of the ramp or hydraulic-arm state.
