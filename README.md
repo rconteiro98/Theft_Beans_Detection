@@ -2,7 +2,7 @@
 
 This repository documents a port operations monitoring project designed to detect trucks in the Tolva ramp area and raise an alarm when a truck enters a lane but the expected ramp lift/unloading confirmation does not happen within the defined time window.
 
-The project combines Bosch IVA (Intelligent Video Analytics) camera rules, lane-specific detection areas, timing logic, and alarm-panel integration to automate a check that previously depended on manual observation. Its purpose is to improve operational safety and response time by confirming that trucks using the Tolva lanes complete the required lift/unloading step before the incident window expires.
+The project combines Bosch NBE-5703-AL cameras, IVA Pro Building Analytics, lane-specific detection areas, timing logic, and alarm-panel integration to automate a check that previously depended on manual observation. Its purpose is to improve operational safety and response time by confirming that trucks using the Tolva lanes complete the required lift/unloading step before the incident window expires.
 
 ![System architecture](assets/system-architecture.svg)
 
@@ -40,7 +40,8 @@ This makes the camera configuration part of a wider port safety workflow: the vi
 
 | Component | Role |
 |------------|------|
-| Bosch IVA camera | Detects virtual line crossing and visual conditions in each lane. |
+| Bosch NBE-5703-AL camera | Captures each monitored lane and runs the video analytics rules. |
+| IVA Pro Building Analytics | Detects virtual line crossing and visual conditions in each lane. |
 | Tolva lane areas | Logical areas assigned to each ramp lane: Tolva A, Tolva B, and Tolva C. |
 | Bosch B4512G alarm panel | Starts the timer and generates the alarm output when the expected event does not occur. |
 | Automatic timer | Runs for 5 minutes after a truck is detected entering a lane. |
@@ -48,9 +49,15 @@ This makes the camera configuration part of a wider port safety workflow: the vi
 
 ---
 
+## Hardware and Analytics
+
+The implementation used Bosch NBE-5703-AL cameras together with IVA Pro Building Analytics. The analytics rules were configured to detect truck entry across virtual lines, monitor lane-specific areas, and provide the event signals used by the timing and alarm logic.
+
+---
+
 ## Overview
 
-These scripts define the logic inside a Bosch IVA camera to automatically trigger alerts when:
+These scripts define the logic inside the Bosch IVA environment to automatically trigger alerts when:
 
 1. A truck enters the Tolva area (`Entrada` task).
 2. The truck is detected in the monitored Tolva/ramp zone (`Tolva` task).
